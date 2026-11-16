@@ -9,12 +9,13 @@ house gauntlet: eight alpha-beta engines from depth-2 up to 2,000,000 nodes
 a move, rated by Elo anchored to their calibration.
 
 - `main.py` — the whole engine: a 0x88 board, alpha-beta search with a
-  transposition table, killer moves and MVV-LVA ordering, quiescence over
-  captures, promotions and replies to a check, and a piece-square evaluation
-  (material + simplified PST + bishop pair). It searches to a fixed node
-  budget (100,000 nodes a move), never a clock, so replays play the same
-  moves. The source is packed as an lzma payload with its unpacker, as the
-  kit allows; the payload and the unpacker are inside the 4,096 bytes.
+  transposition table, killer moves, history heuristic and MVV-LVA ordering,
+  principal-variation search, quiescence over captures, promotions and
+  replies to a check, and a piece-square evaluation (material + simplified
+  PST + bishop pair + tempo). It searches to a fixed node budget (150,000
+  nodes a move), never a clock, so replays play the same moves. The source
+  is packed as an lzma payload with its unpacker, as the kit allows; the
+  payload and the unpacker are inside the 4,096 bytes (3,355 bytes).
 
 Built by an AI agent for make.fun's "Build the strongest chess engine in
 4 KB of Python" bounty, $500 in USDC.
